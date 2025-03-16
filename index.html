@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dino Facts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background-image: url("https://png.pngtree.com/background/20220725/original/pngtree-dinosaurs-seamless-baby-pattern-picture-image_1773204.jpg");
+        background-size: cover;
+        background-position: center;
+        font-family: "Creepster", cursive;
+        text-align: center;
+        color: #4c9730ee;
+      }
+
+      .container {
+        margin-top: 50px;
+      }
+
+      h1 {
+        font-size: 50px;
+        text-shadow: 3px 3px 5px black;
+      }
+
+      button {
+        background-color: #ca3986;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 24px;
+        font-family: "Creepster", cursive;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      button:hover {
+        background-color: #f82caa;
+        transform: scale(1.1);
+      }
+
+      .fact-display {
+        color: #0b0c0bee;
+        margin-top: 20px;
+        font-size: 28px;
+        text-shadow: 2px 2px 4px rgb(19, 87, 54);
+        transition: opacity 0.5s;
+        font-family: Arial, sans-serif; /* Changed to a normal font */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fun Dino Facts! 🦖</h1>
+      <button id="factButton">Here’s a cool dino fact for you!</button>
+      <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+      const facts = [
+        "Dinosaurs first appeared during the Triassic period, around 230 million years ago.",
+        "The largest dinosaur ever discovered is believed to be Argentinosaurus, which could reach lengths of over 100 feet.",
+        "Some dinosaurs, like the Velociraptor, were actually feathered and closely related to modern birds.",
+        "The T. rex had the strongest bite force of any land animal, estimated to be around 12,800 pounds of pressure.",
+        "Many dinosaurs were herbivores, including the massive Brachiosaurus, which could eat up to 880 pounds of vegetation daily.",
+        "The Stegosaurus had a brain the size of a walnut, despite its massive body.",
+        "Dinosaurs lived on every continent, including Antarctica, which was once much warmer and supported lush vegetation.",
+        "Some dinosaurs, like the Triceratops, had elaborate head crests and horns that may have been used for display or combat.",
+        "The first dinosaur fossils were discovered in the early 19th century, leading to the establishment of paleontology as a scientific field.",
+        "Dinosaurs went extinct around 66 million years ago, likely due to a combination of volcanic activity and a massive asteroid impact.",
+        "The word 'dinosaur' means 'terrible lizard' and was coined by British paleontologist Richard Owen in 1842.",
+        "The smallest known dinosaur was the Microraptor, which was about the size of a crow.",
+        "Pterosaurs, often mistaken for dinosaurs, were actually flying reptiles and not true dinosaurs.",
+        "Fossilized dinosaur footprints, known as trackways, help scientists understand how dinosaurs moved and lived.",
+        "Some dinosaurs, like the Ankylosaurus, had armored bodies and club-like tails for defense.",
+        "The Spinosaurus was the largest known carnivorous dinosaur, even bigger than the T. rex!",
+        "Dinosaur fossils have been found with preserved skin impressions, giving clues about their texture and appearance.",
+        "Fossilized dinosaur eggs have been discovered, revealing that some dinosaurs may have cared for their young.",
+        "The Parasaurolophus had a long, curved crest on its head, which may have been used for making sounds."
+      ];
+
+      document.getElementById("factButton").addEventListener("click", function () {
+        const randomFactIndex = Math.floor(Math.random() * facts.length);
+        const factDisplay = document.getElementById("factDisplay");
+
+        factDisplay.style.opacity = 0; // Fade out
+        setTimeout(() => {
+          factDisplay.textContent = facts[randomFactIndex];
+          factDisplay.style.opacity = 1; // Fade in
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
